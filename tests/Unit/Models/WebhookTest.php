@@ -7,7 +7,7 @@ test('test a webhook model has multiple webhook events', function () {
     $webhook = Webhook::factory()->hasWebhookEvents(2)->create();
 
     // assert that the webhook has 2 webhook events
-     expect($webhook->webhookEvents)->toHaveCount(2);
+    expect($webhook->webhookEvents)->toHaveCount(2);
 });
 
 test('test a webhook model has multiple webhook logs', function () {
@@ -15,5 +15,5 @@ test('test a webhook model has multiple webhook logs', function () {
     $webhook = Webhook::factory()->hasWebhookLogs(2)->create();
 
     // assert that the webhook has 2 webhook logs
-     expect($webhook->webhookLogs)->toHaveCount(2);
+    expect($webhook->webhookLogs)->toHaveCount(2);
 });

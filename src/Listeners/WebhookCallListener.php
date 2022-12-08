@@ -14,13 +14,14 @@ class WebhookCallListener
     /**
      * Handle the event.
      *
-     * @param FinalWebhookCallFailedEvent               $event The event
+     * @param  FinalWebhookCallFailedEvent  $event The event
+     *
      * @throws WebhookCallListenerException
      */
     public function handle(FinalWebhookCallFailedEvent $event)
     {
         // if the webhook id is not set, we can't do anything, throw an exception
-        if (!isset($event->meta['webhook_id'])) {
+        if (! isset($event->meta['webhook_id'])) {
             throw WebhookCallListenerException::webhookNotSet();
         }
 
@@ -28,7 +29,7 @@ class WebhookCallListener
         $webhook = Webhook::find($event->meta['webhook_id']);
 
         // if the webhook is not found, return
-        if (!$webhook) {
+        if (! $webhook) {
             throw WebhookCallListenerException::webhookDoesNotExist();
         }
 
@@ -43,7 +44,7 @@ class WebhookCallListener
             ->create([
                 'webhook_event_id' => $event->meta['webhook_event_id'] ?? null,
                 'entity_id' => $entity?->id,
-                'entity_type' => !is_null($entity) ? get_class($entity) : null,
+                'entity_type' => ! is_null($entity) ? get_class($entity) : null,
                 'payload' => $event->payload,
                 'attempt' => $event->attempt,
                 'event_name' => get_class($event),
@@ -51,7 +52,5 @@ class WebhookCallListener
                 'http_code' => $event->response?->getStatusCode(),
                 'response_body' => $event->response?->getBody()->getContents(),
             ]);
-
-
     }
 }
