@@ -7,7 +7,6 @@ use Weblab\WebhookCall\Models\Webhook;
 use Weblab\WebhookCall\Models\WebhookEvent;
 use Weblab\WebhookCall\Models\WebhookLog;
 
-
 class WebhookLogFactory extends Factory
 {
     /**

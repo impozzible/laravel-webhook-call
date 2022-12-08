@@ -5,7 +5,6 @@ namespace Weblab\WebhookCall\Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Weblab\WebhookCall\Models\Webhook;
 
-
 class WebhookFactory extends Factory
 {
     /**

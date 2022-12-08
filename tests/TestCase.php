@@ -70,12 +70,12 @@ class TestCase extends Orchestra
     protected function createTables(...$tableNames)
     {
         collect($tableNames)->each(function (string $tableName) {
-            Schema::create($tableName, function (Blueprint $table) use ($tableName) {
+            Schema::create($tableName, function (Blueprint $table) {
                 $table->increments('id');
                 $table->string('name')->nullable();
                 $table->string('email')->nullable();
                 $table->string('product')->nullable();
-                $table->timestamps();;
+                $table->timestamps();
             });
         });
     }

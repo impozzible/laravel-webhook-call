@@ -8,7 +8,6 @@ use Spatie\LaravelPackageTools\PackageServiceProvider;
 use Spatie\WebhookServer\Events\FinalWebhookCallFailedEvent;
 use Spatie\WebhookServer\Events\WebhookCallFailedEvent;
 use Spatie\WebhookServer\Events\WebhookCallSucceededEvent;
-use Weblab\WebhookCall\Commands\SkeletonCommand;
 use Weblab\WebhookCall\Listeners\WebhookCallListener;
 
 /**
@@ -19,7 +18,7 @@ class WebhookCallServiceProvider extends PackageServiceProvider
     /**
      * Configure the package.
      *
-     * @param   Package             $package The package to configure
+     * @param  Package  $package The package to configure
      * @return  void
      */
     public function configurePackage(Package $package): void

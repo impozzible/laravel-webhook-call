@@ -34,7 +34,7 @@ class WebhookCall extends SpatieWebhookCall
     /**
      * Set the URL and secret for the webhook call.
      *
-     * @param   Webhook           $webhook The webhook model
+     * @param  Webhook  $webhook The webhook model
      * @return  static            The instance of this class, so we can chain methods
      */
     public function webhook(Webhook $webhook): static
@@ -43,7 +43,7 @@ class WebhookCall extends SpatieWebhookCall
         $this->url($webhook->url);
 
         // if the webhook has a secret, set it
-        if (!is_null($webhook->secret)) {
+        if (! is_null($webhook->secret)) {
             $this->useSecret($webhook->secret);
         }
 
@@ -57,7 +57,7 @@ class WebhookCall extends SpatieWebhookCall
     /**
      * Set the webhook event model.
      *
-     * @param WebhookEvent              $webhookEvent The webhook event model
+     * @param  WebhookEvent  $webhookEvent The webhook event model
      * @return static                   The instance of this class, so we can chain methods
      */
     public function webhookEvent(WebhookEvent $webhookEvent): static
@@ -72,7 +72,7 @@ class WebhookCall extends SpatieWebhookCall
     /**
      * Set the entity the webhook call is linked to.
      *
-     * @param Model                     $entity The entity
+     * @param  Model  $entity The entity
      * @return static                   The instance of this class, so we can chain methods
      */
     public function forEntity(Model $entity): static
@@ -89,7 +89,7 @@ class WebhookCall extends SpatieWebhookCall
      *
      * @throws CouldNotCallWebhook
      */
-    protected function prepareForDispatch() : void
+    protected function prepareForDispatch(): void
     {
         // throw an exception if the webhook model is not set
         if (! isset($this->webhook)) {
