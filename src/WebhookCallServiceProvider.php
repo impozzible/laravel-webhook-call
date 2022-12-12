@@ -25,7 +25,13 @@ class WebhookCallServiceProvider extends PackageServiceProvider
     {
         // configure the package
         $package->name('webhook-call')
-            ->hasMigration('create_skeleton_table')
+            ->hasConfigFile()
+            ->hasMigrations([
+                'create_webhooks_table',
+                'create_webhook_events_table',
+                'create_webhook_webhook_events_table',
+                'create_webhook_logs_table'
+            ])
             ->runsMigrations();
 
         // register the event listeners
