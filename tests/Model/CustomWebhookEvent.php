@@ -6,5 +6,4 @@ use Weblab\WebhookCall\Models\WebhookEvent;
 
 class CustomWebhookEvent extends WebhookEvent
 {
-
 }

@@ -30,7 +30,7 @@ class WebhookCallServiceProvider extends PackageServiceProvider
                 'create_webhooks_table',
                 'create_webhook_events_table',
                 'create_webhook_webhook_events_table',
-                'create_webhook_logs_table'
+                'create_webhook_logs_table',
             ])
             ->runsMigrations();
 
