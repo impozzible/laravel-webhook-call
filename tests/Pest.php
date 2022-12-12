@@ -5,4 +5,4 @@ use Weblab\WebhookCall\Tests\TestCase;
 
 uses(TestCase::class)->in(__DIR__);
 
-uses(RefreshDatabase::class)->in('Unit/Models', 'Unit/Listeners');
+uses(RefreshDatabase::class)->in('Unit');
