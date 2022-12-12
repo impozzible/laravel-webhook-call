@@ -27,10 +27,10 @@ class WebhookCallServiceProvider extends PackageServiceProvider
         $package->name('webhook-call')
             ->hasConfigFile()
             ->hasMigrations([
-                'create_webhooks_table',
-                'create_webhook_events_table',
-                'create_webhook_webhook_events_table',
-                'create_webhook_logs_table',
+                '2022_12_08_101759_create_webhooks_table',
+                '2022_12_08_102759_create_webhook_events_table',
+                '2022_12_08_103259_create_webhook_webhook_events_table',
+                '2022_12_08_103759_create_webhook_logs_table',
             ])
             ->runsMigrations();
 
