@@ -25,7 +25,7 @@ return new class extends Migration
             // A foreign key constraint on the webhook_id column.
             $table->foreign('webhook_id')
                 ->references('id')
-                ->on('webhook_endpoints');
+                ->on('webhooks');
 
             // A foreign key constraint on the webhook_event_id column.
             $table->foreign('webhook_event_id')
