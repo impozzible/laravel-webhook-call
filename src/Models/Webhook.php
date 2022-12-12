@@ -35,7 +35,8 @@ class Webhook extends Model
      */
     public function webhookEvents(): BelongsToMany
     {
-        return $this->belongsToMany(config('webhook-call.models.webhook_event'), 'webhook_webhook_events', 'webhook_id', 'webhook_event_id');
+        return $this->belongsToMany(config('webhook-call.models.webhook_event'), 'webhook_webhook_events', 'webhook_id', 'webhook_event_id')
+            ->withTimestamps();
     }
 
     /**
