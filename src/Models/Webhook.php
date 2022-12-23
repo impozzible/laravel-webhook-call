@@ -15,6 +15,13 @@ class Webhook extends Model
     use HasFactory;
 
     /**
+     * The table associated with the model.
+     *
+     * @var string
+     */
+    protected $table = 'webhooks';
+
+    /**
      * Make all attributes fillable
      *
      * @var array
@@ -28,7 +35,8 @@ class Webhook extends Model
      */
     public function webhookEvents(): BelongsToMany
     {
-        return $this->belongsToMany(WebhookEvent::class, 'webhook_webhook_events');
+        return $this->belongsToMany(config('webhook-call.models.webhook_event'), 'webhook_webhook_events', 'webhook_id', 'webhook_event_id')
+            ->withTimestamps();
     }
 
     /**
@@ -38,6 +46,6 @@ class Webhook extends Model
      */
     public function webhookLogs(): HasMany
     {
-        return $this->hasMany(WebhookLog::class);
+        return $this->hasMany(config('webhook-call.models.webhook_log'));
     }
 }

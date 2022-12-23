@@ -16,6 +16,19 @@ test('a webhook belongs to a webhook log', function () {
         ->toBeInstanceOf(Webhook::class);
 });
 
+test('a custom webhook model can be used', function () {
+    // create a webhook log that belongs to a webhook
+    $webhookLog = WebhookLog::factory()
+        ->for(Webhook::factory())
+        ->create();
+
+    // set a custom webhook model
+    config()->set('webhook-call.models.webhook', \Weblab\WebhookCall\Tests\Model\CustomWebhook::class);
+
+    // assert that the custom webhook model is being used
+    expect($webhookLog->webhook)->toBeInstanceOf(\Weblab\WebhookCall\Tests\Model\CustomWebhook::class);
+});
+
 test('a webhook belongs to a webhook event', function () {
     // create a webhook log that belongs to a webhook
     $webhookLog = WebhookLog::factory()

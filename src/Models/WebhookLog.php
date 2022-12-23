@@ -16,6 +16,13 @@ class WebhookLog extends Model
     use HasFactory;
 
     /**
+     * The table associated with the model.
+     *
+     * @var string
+     */
+    protected $table = 'webhook_logs';
+
+    /**
      * Make all attributes fillable
      *
      * @var array
@@ -38,7 +45,7 @@ class WebhookLog extends Model
      */
     public function webhook(): BelongsTo
     {
-        return $this->belongsTo(Webhook::class);
+        return $this->belongsTo(config('webhook-call.models.webhook'));
     }
 
     /**
@@ -48,7 +55,7 @@ class WebhookLog extends Model
      */
     public function webhookEvent(): BelongsTo
     {
-        return $this->belongsTo(WebhookEvent::class);
+        return $this->belongsTo(config('webhook-call.models.webhook_event'));
     }
 
     /**

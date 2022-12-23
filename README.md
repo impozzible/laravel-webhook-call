@@ -19,7 +19,31 @@ You can install the package via composer:
 composer require weblabnl/laravel-webhook-call
 ```
 
-After installing the package, you can run the migrations with:
+You can publish the config file with:
+```bash
+php artisan vendor:publish --provider="Weblab\WebhookCall\WebhookCallServiceProvider"
+```
+
+This is the contents of the file that will be published at `config/webhook-call.php`. You can change the default values
+to your needs and bring your own top model objects.
+
+```php
+return [
+    // the model to use for the webhook calls
+    'models' => [
+        // The model that should be used to store the webhook endpoint data.
+        'webhook' => \Weblab\WebhookCall\Models\Webhook::class,
+
+        // The model that should be used to store the webhook event data.
+        'webhook_event' => \Weblab\WebhookCall\Models\WebhookEvent::class,
+
+        // The model that should be used to store the webhook log data.
+        'webhook_log' => \Weblab\WebhookCall\Models\WebhookLog::class,
+    ],
+];
+```
+
+After installing the package, you can run the migrations using:
 
 ```bash
 php artisan migrate

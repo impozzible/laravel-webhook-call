@@ -4,7 +4,6 @@ namespace Weblab\WebhookCall\Listeners;
 
 use Spatie\WebhookServer\Events\FinalWebhookCallFailedEvent;
 use Weblab\WebhookCall\Exceptions\WebhookCallListenerException;
-use Weblab\WebhookCall\Models\Webhook;
 
 /**
  * Class FinalWebhookCallFailedListener
@@ -26,7 +25,7 @@ class WebhookCallListener
         }
 
         // find the webhook in the database
-        $webhook = Webhook::find($event->meta['webhook_id']);
+        $webhook = config('webhook-call.models.webhook')::find($event->meta['webhook_id']);
 
         // if the webhook is not found, return
         if (! $webhook) {
