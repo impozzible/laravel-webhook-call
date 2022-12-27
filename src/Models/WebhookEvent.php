@@ -22,7 +22,7 @@ class WebhookEvent extends Model
     /**
      * Make all attributes fillable
      *
-     * @var array
+     * @var array<string>|bool>
      */
     protected $guarded = [];
 }

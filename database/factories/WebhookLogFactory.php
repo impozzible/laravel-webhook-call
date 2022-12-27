@@ -10,7 +10,7 @@ use Weblab\WebhookCall\Models\WebhookLog;
 class WebhookLogFactory extends Factory
 {
     /**
-     * @var string
+     * @var class-string<WebhookLog>
      */
     protected $model = WebhookLog::class;
 

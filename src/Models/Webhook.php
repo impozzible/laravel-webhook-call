@@ -9,6 +9,16 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
  * Class Webhook
+ *
+ * @property int $id
+ * @property string|null $name
+ * @property string $url
+ * @property string|null $secret
+ * @property bool $enabled
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Weblab\WebhookCall\Models\WebhookEvent[] $webhookEvents
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Weblab\WebhookCall\Models\WebhookLog[] $webhookLogs
  */
 class Webhook extends Model
 {
@@ -24,9 +34,18 @@ class Webhook extends Model
     /**
      * Make all attributes fillable
      *
-     * @var array
+     * @var array<string>|bool
      */
     protected $guarded = [];
+
+    /**
+     * The attributes that should be cast.
+     *
+     * @var array<string, string>
+     */
+    protected $casts = [
+        'enabled' => 'boolean',
+    ];
 
     /**
      * Get the webhook events (1 to many relationship with the WebhookEvent model through the webhook_webhook_events table)

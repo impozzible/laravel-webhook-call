@@ -109,7 +109,7 @@ class WebhookCall extends SpatieWebhookCall
 
         // if the entity is set, add the entity_id and entity_type to the meta data
         if (isset($this->entity)) {
-            $this->callWebhookJob->meta['entity_id'] = $this->entity->id;
+            $this->callWebhookJob->meta['entity_id'] = $this->entity->getKey();
             $this->callWebhookJob->meta['entity_type'] = get_class($this->entity);
         }
     }

@@ -31,8 +31,7 @@ class WebhookCallServiceProvider extends PackageServiceProvider
                 '2022_12_08_102759_create_webhook_events_table',
                 '2022_12_08_103259_create_webhook_webhook_events_table',
                 '2022_12_08_103759_create_webhook_logs_table',
-            ])
-            ->runsMigrations();
+            ]);
 
         // register the event listeners
         Event::listen(
