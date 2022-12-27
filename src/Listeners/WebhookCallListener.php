@@ -21,7 +21,7 @@ class WebhookCallListener
     {
         // if the webhook id is not set, we can't do anything, throw an exception
         if (! isset($event->meta['webhook_id'])) {
-            throw NEW WebhookCallListenerException('Event could not be linked to a webhook because the webhook has not been set.');
+            throw new WebhookCallListenerException('Event could not be linked to a webhook because the webhook has not been set.');
         }
 
         // find the webhook in the database
