@@ -5,10 +5,15 @@ namespace Weblab\WebhookCall\Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Weblab\WebhookCall\Models\WebhookEvent;
 
+/**
+ * Class WebhookEventFactory
+ *
+ * @extends Factory<WebhookEvent>
+ */
 class WebhookEventFactory extends Factory
 {
     /**
-     * @var string
+     * @var class-string<WebhookEvent>
      */
     protected $model = WebhookEvent::class;
 

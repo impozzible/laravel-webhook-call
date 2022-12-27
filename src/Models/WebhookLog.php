@@ -25,12 +25,14 @@ class WebhookLog extends Model
     /**
      * Make all attributes fillable
      *
-     * @var array
+     * @var array<string>|bool
      */
     protected $guarded = [];
 
     /**
      * Casts
+     *
+     * @var array<string, string>
      */
     protected $casts = [
         'attempt' => 'integer',

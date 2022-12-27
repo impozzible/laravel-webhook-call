@@ -8,7 +8,7 @@ use Weblab\WebhookCall\Models\Webhook;
 class WebhookFactory extends Factory
 {
     /**
-     * @var string
+     * @var class-string<Webhook>
      */
     protected $model = Webhook::class;
 
