@@ -45,6 +45,8 @@ class WebhookCall extends SpatieWebhookCall
         // if the webhook has a secret, set it
         if (! is_null($webhook->secret)) {
             $this->useSecret($webhook->secret);
+        } else {
+            $this->doNotSign();
         }
 
         // set the webhook event model
