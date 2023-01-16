@@ -2,7 +2,7 @@
 
 namespace Weblab\WebhookCall\Listeners;
 
-use Spatie\WebhookServer\Events\FinalWebhookCallFailedEvent;
+use Spatie\WebhookServer\Events\WebhookCallEvent;
 use Weblab\WebhookCall\Exceptions\WebhookCallListenerException;
 
 /**
@@ -13,11 +13,11 @@ class WebhookCallListener
     /**
      * Handle the event.
      *
-     * @param  FinalWebhookCallFailedEvent  $event The event
+     * @param  WebhookCallEvent  $event The event
      *
      * @throws WebhookCallListenerException
      */
-    public function handle(FinalWebhookCallFailedEvent $event)
+    public function handle(WebhookCallEvent $event)
     {
         // if the webhook id is not set, we can't do anything, throw an exception
         if (! isset($event->meta['webhook_id'])) {
