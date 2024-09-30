@@ -4,6 +4,4 @@ namespace Weblab\WebhookCall\Tests\Model;
 
 use Weblab\WebhookCall\Models\WebhookEvent;
 
-class CustomWebhookEvent extends WebhookEvent
-{
-}
+class CustomWebhookEvent extends WebhookEvent {}

@@ -20,7 +20,7 @@ class WebhookEventFactory extends Factory
     /**
      * The definition
      *
-     * @return array                    The definition
+     * @return array The definition
      */
     public function definition()
     {

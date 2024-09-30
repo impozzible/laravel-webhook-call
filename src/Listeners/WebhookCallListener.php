@@ -13,7 +13,7 @@ class WebhookCallListener
     /**
      * Handle the event.
      *
-     * @param  WebhookCallEvent  $event The event
+     * @param  WebhookCallEvent  $event  The event
      *
      * @throws WebhookCallListenerException
      */

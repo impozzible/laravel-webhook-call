@@ -50,7 +50,7 @@ class Webhook extends Model
     /**
      * Get the webhook events (1 to many relationship with the WebhookEvent model through the webhook_webhook_events table)
      *
-     * @return BelongsToMany                The webhook events statement
+     * @return BelongsToMany The webhook events statement
      */
     public function webhookEvents(): BelongsToMany
     {
@@ -61,7 +61,7 @@ class Webhook extends Model
     /**
      * Get the webhook logs for this webhook (1 to many relationship with the WebhookLog model)
      *
-     * @return HasMany              The webhook logs statement
+     * @return HasMany The webhook logs statement
      */
     public function webhookLogs(): HasMany
     {
