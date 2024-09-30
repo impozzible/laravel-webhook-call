@@ -38,13 +38,17 @@ class WebhookCallListener
             $entity = $event->meta['entity_type']::find($event->meta['entity_id']);
         }
 
+        $newPayload = is_string($event->payload) ? json_decode($event->payload, true, 512, JSON_THROW_ON_ERROR) : $event->payload;
+
+        $newPayload['headers'] = $event->headers;
+
         // create a new webhook log
         $webhook->webhookLogs()
             ->create([
                 'webhook_event_id' => $event->meta['webhook_event_id'] ?? null,
                 'entity_id' => $entity?->id,
                 'entity_type' => ! is_null($entity) ? get_class($entity) : null,
-                'payload' => $event->payload,
+                'payload' => $newPayload,
                 'attempt' => $event->attempt,
                 'event_name' => get_class($event),
                 'http_verb' => $event->httpVerb,
