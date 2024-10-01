@@ -43,7 +43,7 @@ class WebhookLog extends Model
     /**
      * Get the webhook for this webhook log (1 to 1 relationship with the Webhook model)
      *
-     * @return BelongsTo               The webhook statement
+     * @return BelongsTo The webhook statement
      */
     public function webhook(): BelongsTo
     {
@@ -53,7 +53,7 @@ class WebhookLog extends Model
     /**
      * Get the webhook event for this webhook log (1 to 1 relationship with the WebhookEvent model)
      *
-     * @return BelongsTo               The webhook event statement
+     * @return BelongsTo The webhook event statement
      */
     public function webhookEvent(): BelongsTo
     {
@@ -63,7 +63,7 @@ class WebhookLog extends Model
     /**
      * Get a entity linked to the webhook log
      *
-     * @return MorphTo                 The entity statement
+     * @return MorphTo The entity statement
      */
     public function entity(): MorphTo
     {

@@ -39,7 +39,7 @@ class TestCase extends Orchestra
             'database' => ':memory:',
         ]);
 
-        config()->set('webhook-server', require(__DIR__.'/../vendor/spatie/laravel-webhook-server/config/webhook-server.php'));
+        config()->set('webhook-server', require (__DIR__.'/../vendor/spatie/laravel-webhook-server/config/webhook-server.php'));
     }
 
     /**
@@ -64,7 +64,6 @@ class TestCase extends Orchestra
     /**
      * Create additional tables
      *
-     * @param ...$tableNames
      * @return void
      */
     protected function createTables(...$tableNames)

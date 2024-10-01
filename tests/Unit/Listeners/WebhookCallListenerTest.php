@@ -186,10 +186,9 @@ test('the name of the triggered event is added to the webhook log', function () 
 /**
  * Create and dispatch an event.
  *
- * @param  Webhook  $webhook The webhook entity
- * @param  WebhookEvent|null  $webhookEvent The webhook event entity
- * @param  int|null  $attempt The attempt number
- * @return void
+ * @param  Webhook  $webhook  The webhook entity
+ * @param  WebhookEvent|null  $webhookEvent  The webhook event entity
+ * @param  int|null  $attempt  The attempt number
  */
 function createAndDispatchEvent(Webhook $webhook, ?WebhookEvent $webhookEvent = null, ?int $attempt = 1): void
 {

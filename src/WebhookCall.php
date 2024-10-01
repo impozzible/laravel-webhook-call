@@ -12,30 +12,24 @@ class WebhookCall extends SpatieWebhookCall
 {
     /**
      * The webhook model.
-     *
-     * @var Webhook
      */
     protected Webhook $webhook;
 
     /**
      * The webhook event model.
-     *
-     * @var WebhookEvent
      */
     protected WebhookEvent $webhookEvent;
 
     /**
      * The related entity for the webhook call.
-     *
-     * @var Model
      */
     protected Model $entity;
 
     /**
      * Set the URL and secret for the webhook call.
      *
-     * @param  Webhook  $webhook The webhook model
-     * @return  static            The instance of this class, so we can chain methods
+     * @param  Webhook  $webhook  The webhook model
+     * @return static The instance of this class, so we can chain methods
      */
     public function webhook(Webhook $webhook): static
     {
@@ -59,8 +53,8 @@ class WebhookCall extends SpatieWebhookCall
     /**
      * Set the webhook event model.
      *
-     * @param  WebhookEvent  $webhookEvent The webhook event model
-     * @return static                   The instance of this class, so we can chain methods
+     * @param  WebhookEvent  $webhookEvent  The webhook event model
+     * @return static The instance of this class, so we can chain methods
      */
     public function webhookEvent(WebhookEvent $webhookEvent): static
     {
@@ -74,8 +68,8 @@ class WebhookCall extends SpatieWebhookCall
     /**
      * Set the entity the webhook call is linked to.
      *
-     * @param  Model  $entity The entity
-     * @return static                   The instance of this class, so we can chain methods
+     * @param  Model  $entity  The entity
+     * @return static The instance of this class, so we can chain methods
      */
     public function forEntity(Model $entity): static
     {
